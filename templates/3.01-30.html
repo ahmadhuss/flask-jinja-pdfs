@@ -91,7 +91,7 @@
     <div class="div-1-wrap">
         <div>THE COMPANIES ACT (CHAPTER 50)</div>
         <br>
-        <div>A PRIVATE COMPANY LIMITED BY SHARES</div>
+        <div>A COMPANY LIMITED BY GUARANTEE</div>
         <br>
         <div>CONSTITUTION OF</div>
         <br>
@@ -99,7 +99,7 @@
     </div>
 
     <div class="div-2-wrap">
-        <div class="div-2">1. The name of the company is this {{ app.company_name or '' }}</div>
+        <div class="div-2">1. The name of the company is {{ app.company_name or '' }}</div>
         <div class="div-2">2. The registered office of the company is situated in the Republic of Singapore.<br>
             <div class="div-2-nested">
                 <div><strong>{{ app.addr_1 }}</strong></div>
@@ -108,56 +108,46 @@
             </div>
         </div>
         <div class="div-2">3. The liability of the members is limited.</div>
-        <div class="div-2">4. The share capital of the company is:<br>
-            <div class="div-2-nested-table">
-                <table class="table first">
-                    <tbody>
-                    <tr>
-                        <td style="text-align: center"><u><strong>Currency</strong></u></td>
-                        <td style="text-align: center"><u><strong>Amount of Issued Share Capital</strong></u></td>
-                    </tr>
-                    <tr>
-                        {% if app.capital_currency %}
-                        <td style="text-align: center"><strong>{{ app.capital_currency }}</strong></td>
-                        {% else %}
-                        <td style="text-align: center"><strong>SINGAPORE DOLLARS (SGD)</strong></td>
-                        {% endif %}
-                        <td style="text-align: center"><strong>{{ app.no_issue_share or '0' }}</strong></td>
-                    </tr>
-                    </tbody>
-                </table>
+
+
+        <div class="div-2">
+            <div style="text-align: justify;">
+                4. Each member of the company undertakes to contribute to the assets of the company in the event of it
+                being
+                wound up while he or she is a member, or within one year after he or she ceases to be a member, for
+                payment of
+                the debts and liabilities of the company contracted before he or she ceases to be a member, and the
+                costs,
+                charges, and expenses of winding up and for the adjustment of the rights of the contributors among
+                themselves,
+                such amount as may be required not exceeding the amounts shown in paragraph 6.
             </div>
+        </div>
+
+        <div class="div-2">5. The number of members with which the company is applying to be registered is 2
         </div>
 
 
         <div class="div-2">
             <div style="text-align: justify;">
-                5. We, the persons whose names and occupations are set out in this Constitution, desire to form a
+                6. We, the persons whose names and occupations are set out in this Constitution, desire to form a
                 company in
                 pursuance of this Constitution and we each agree to take the number of shares in the capital of the
-                company
-                set out against our respective names.
+                company set
+                out against our respective names.
             </div>
             <div class="div-2-nested-table-2">
                 <table class="table second">
                     <tr>
                         <td><u><strong>Name of Subscribers<br><br></strong></u></td>
                         <td style="text-align: center"><u><strong>Occupation of<br>Subscribers<br></strong></u></td>
-                        <td style="text-align: center"><u><strong>Number of Shares<br>Allotted<br></strong></u></td>
-                        <td style="text-align: center"><u><strong>Class of shares<br><br></strong></u></td>
-                        <td style="text-align: center"><u><strong>Currency<br><br></strong></u></td>
+                        <td style="text-align: center"><u><strong>Amount Guaranteed<br><br></strong></u></td>
                     </tr>
                     {% for officer in app.officers_shareholders %}
                     <tr>
                         <td>{{ officer.full_name or '' }}</td>
                         <td></td>
                         <td style="text-align: right;">{{ officer.shareholder_share or '0.0' }}</td>
-                        <td style="text-align: center">Ordinary</td>
-                        {% if app.capital_currency %}
-                        <td style="text-align: center">{{ app.capital_currency }}</td>
-                        {% else %}
-                        <td style="text-align: center">SINGAPORE DOLLARS (SGD)</td>
-                        {% endif %}
                     </tr>
                     {% endfor %}
                 </table>
