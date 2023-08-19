@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company - Internal</title>
+        <style>
+        /* Add your existing styles here */
+
+        /* Styling for Page Number */
+        .page-number {
+            text-align: center;
+            color: #999;
+            margin: 10px 0;
+        }
+
+        /* Basic styling for dynamic content */
+        .dynamic-content {
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- JavaScript to Insert Page Numbers Dynamically -->
+<script>
+    // Function to insert page numbers
+    function insertPageNumbers() {
+        const dynamicContentSections = document.querySelectorAll(".dynamic-content");
+        
+        dynamicContentSections.forEach((section, index) => {
+            const pageNumberElement = document.createElement("div");
+            pageNumberElement.classList.add("page-number");
+            pageNumberElement.textContent = "Page " + (index + 1);
+            section.appendChild(pageNumberElement);
+        });
+    }
+
+    // Call the insertPageNumbers function after adding dynamic content
+    window.onload = function() {
+        insertPageNumbers();
+    };
+</script>
+
+<!-- Dynamic Content -->
+<div class="dynamic-content">
+    <h1>Dynamic Content Section 1</h1>
+    <p>This is some dynamic content...</p>
+</div>
+
+<div class="dynamic-content">
+    <h1>Dynamic Content Section 2</h1>
+    <p>More dynamic content...</p>
+</div>
+
+<!-- Add more dynamic content sections here -->
+
+</body>
+</html>

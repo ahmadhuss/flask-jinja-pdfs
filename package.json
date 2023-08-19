@@ -1,0 +1,22 @@
+{
+  "name": "flask-jinja-pdfs",
+  "version": "1.0.0",
+  "description": "Flask Jinja Templates",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmadhuss/flask-jinja-pdfs.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahmadhuss/flask-jinja-pdfs/issues"
+  },
+  "homepage": "https://github.com/ahmadhuss/flask-jinja-pdfs#readme",
+  "devDependencies": {
+    "prettier": "^2.8.8"
+  }
+}

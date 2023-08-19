@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company - Internal</title>
+    <link type="text/css" rel="stylesheet" href="https://staging.erp.leekim.online/assets/leekimerp/css/pdf_reset.css">
+    <style>
+        .outer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px
+        }
+
+        .table-wrap {
+            margin-bottom: 24px;
+        }
+
+        .table {
+            width: 100%;
+            color: #000000;
+            border: 1px solid #000;
+        }
+
+        .table th,
+        .table td {
+            padding: 2px 12px;
+            vertical-align: top;
+            border: 1px solid #000;
+        }
+
+        table.column-4 td {
+            width: 25%;
+        }
+
+        /* For Column 2 Table */
+        .w-25 {
+            width: 25%;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+<div class="outer">
+    <div>
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMzIiBoZWlnaHQ9IjQzIiB2aWV3Qm94PSIwIDAgMTMzIDQzIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTYuMjc3NyA0Mi4xMzM5TDAgMjUuODYwMlYxNi4yNzM3TDE2LjI3NzcgMEgyNS44NjQyTDQyLjEzNzkgMTYuMjczN1YyNS44NjAyTDI1Ljg2NDIgNDIuMTMzOUgxNi4yNzc3WiIgZmlsbD0iIzAwNDdBQiIvPgo8cGF0aCBkPSJNMzEuNzQzNCA5LjM1NjQ5TDExLjkwODEgMjkuMTkxOEwxMS44Nzk4IDEyLjM0NDdMMTAuNDMwMSAxMy43OTg0VjMwLjY3MzhMMy44NDc5NSAyNC4xNjg0VjE3Ljk4MTlMMTcuOTgxNCAzLjg0ODQ3SDIwLjMyMzVWMTguNjQ0MkwyMS44MDU1IDE3LjE2NjJWMy44NDA0MUgyNC4xNDc2TDI5LjU5MSA5LjI4MzhMMzAuNjQxIDguMjM3OTJMMjQuNzYxNCAyLjM1ODRIMTcuMzcxN0wyLjM3IDE3LjM2NDFWMjQuNzUzOUwxMC4zOTM4IDMyLjc3NzdMMjAuMzI3NiAyMi44Mzk4VjM4LjI3MzVIMTcuOTg1NEwxMi41NDIgMzIuODMwMUwxMS40OTYyIDMzLjg3NkwxNy4zNzE3IDM5Ljc1NTZIMjQuNzY1NUwzOS43NjcxIDI0Ljc0OThWMTcuMzYwMUwzMS43NDM0IDkuMzU2NDlaTTM4LjI4OTIgMjQuMTY0M0wzMS43NDM0IDMwLjcwNjFMMjMuMjYzMyAyMi4yMjZMMjMuMjk1NiAyNC4zNDZMMzAuNjkzNCAzMS43NDc5TDI0LjE0NzYgMzguMjg5N0gyMS44MDU1VjIxLjM3NEwzMS43MzkzIDExLjQ0MDJMMzguMjg1MSAxNy45ODE5TDM4LjI4OTIgMjQuMTY0M1oiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OC40MDQ3IDIuNTQzOTVINTEuNjU5NFYxNS45MTgySDU3LjEzNTFMNTkuNDI0NyAxNS4yMTE2VjE5LjA0NzhINDguNDA0N1YyLjU0Mzk1WiIgZmlsbD0iIzAwNDdBQiIvPgo8cGF0aCBkPSJNNjIuNzg4OSAyLjU0Mzk1SDc0LjA1NTNWNi4zOTYzMUw3MS43NDk2IDUuNjg1Nkg2Ni4wNDM3VjkuMjEwOUg3My4xMzQ2VjEyLjM0ODVINjYuMDQzN1YxNS45MTgySDcyLjA3NjZMNzQuMzY2MyAxNS4yMTE2VjE5LjA0NzhINjIuNzg4OVYyLjU0Mzk1WiIgZmlsbD0iIzAwNDdBQiIvPgo8cGF0aCBkPSJNOTUuOTc4MiA4LjQyMzQ2TDk1Ljg4OTQgOS4yNTUzMkw5Ni4zODIgOC42MjUzN0wxMDEuNzY5IDIuNTQzOTVIMTA1Ljk4NUw5OS4xNjQzIDkuOTQ5ODZMMTA2LjAyOSAxOS4wNTk5SDEwMS44NzhMOTYuNzg1OSAxMi4wMTM0TDk1Ljk3ODIgMTIuODIxVjE2Ljc3MDNMOTYuNjg4OSAxOS4wNTk5SDkyLjY3OTFWMi41NDM5NUg5Ni42ODg5TDk1Ljk3ODIgNC44MzM1NlY4LjQyMzQ2WiIgZmlsbD0iIzAwNDdBQiIvPgo8cGF0aCBkPSJNMTA4LjQ3MiAyLjU0Mzk1SDExMS43MjdWMTkuMDQ3OEgxMDguNDcyVjIuNTQzOTVaIiBmaWxsPSIjMDA0N0FCIi8+CjxwYXRoIGQ9Ik0xMTUuOTkxIDE5LjA0NzdWMS44NzM1NEgxMTYuMDEyTDEyNS4xOSAxNC44ODQ0TDEyMy43OTcgMTQuNTczNUwxMzIuOTUyIDEuODczNTRIMTMzVjE5LjA0NzdIMTI5Ljc0NVY5LjIxMDg0TDEyOS45NDcgMTAuODkwN0wxMjQuMzU4IDE4LjgzMzdIMTI0LjMxNEwxMTguNTkyIDEwLjg5MDdMMTE5LjE1MyA5LjM0NDA4VjE5LjA0NzdIMTE1Ljk5MVoiIGZpbGw9IiMwMDQ3QUIiLz4KPHBhdGggZD0iTTc3LjczMzkgMi41NDM5NUg4OC45OTYyVjYuMzk2MzFMODYuNjkwNSA1LjY4NTZIODAuOTg4NlY5LjIxMDlIODguMDc1NVYxMi4zNDg1SDgwLjk4ODZWMTUuOTE4Mkg4Ny4wMjE2TDg5LjMxMTIgMTUuMjExNlYxOS4wNDc4SDc3LjczMzlWMi41NDM5NVoiIGZpbGw9IiMwMDQ3QUIiLz4KPHBhdGggZD0iTTQ4LjQwNDcgMjMuNTY2NEg1OS41Mzc4VjI3LjQxNDdMNTcuMTE0OSAyNi43MDgxSDU1LjUzNlY0MC4wODI0SDUyLjI4MTNWMjYuNzIwMkg1MC44NTk5TDQ4LjQzNyAyNy40MjY5TDQ4LjQwNDcgMjMuNTY2NFoiIGZpbGw9IiMwMDQ3QUIiLz4KPHBhdGggZD0iTTkwLjAwNTYgMzguNzEzMkM4OS42OTI3IDM4Ljk0NTcgODkuMzU4NyAzOS4xNDg1IDg5LjAwODEgMzkuMzE4OUM4OC40Mzg0IDM5LjYwNDUgODcuODQwMiAzOS44MjkyIDg3LjIyMzMgMzkuOTg5M0M4Ni40NjI0IDQwLjE5MTUgODUuNjc2MiA0MC4yODI3IDg0Ljg4OTIgNDAuMjU5OEM4My42OTE2IDQwLjI1MTQgODIuNTA2OSA0MC4wMTE1IDgxLjQwMDMgMzkuNTUzMkM4MC40MTY4IDM5LjEzOTkgNzkuNTMwOCAzOC41MjUgNzguNzk5OCAzNy43NDgxQzc4LjA5NDYgMzYuOTg3NCA3Ny41NDU4IDM2LjA5NTYgNzcuMTg0NSAzNS4xMjMzQzc2Ljc5NzIgMzQuMTE2OCA3Ni41OTc0IDMzLjA0NzkgNzYuNTk0OSAzMS45Njk1Qzc2LjU4MTEgMzAuNzkyNSA3Ni43NzUyIDI5LjYyMjQgNzcuMTY4MyAyOC41MTI5Qzc3LjUxNzkgMjcuNTA4NSA3OC4wNjc0IDI2LjU4NTQgNzguNzgzNiAyNS43OTkyQzc5LjQ5ODIgMjUuMDM1IDgwLjM2NjYgMjQuNDMwOCA4MS4zMzE2IDI0LjAyNjVDODIuMzY5NCAyMy41OTcgODMuNDgzNiAyMy4zODI3IDg0LjYwNjYgMjMuMzk2NkM4NS42MDUgMjMuMzgxMSA4Ni41OTg4IDIzLjUzNCA4Ny41NDYzIDIzLjg0ODhDODguMjc3MSAyNC4wODg5IDg4Ljk3NzcgMjQuNDEyOCA4OS42MzQgMjQuODE0TDg4LjM1NCAyNy44ODdDODcuODg2NSAyNy41NDQ0IDg3LjM4NzYgMjcuMjQ2OSA4Ni44NjM5IDI2Ljk5ODZDODYuMTk0NCAyNi42ODEyIDg1LjQ2MDQgMjYuNTIzNiA4NC43MTk2IDI2LjUzODJDODQuMDk1OCAyNi41NDA1IDgzLjQ3OTkgMjYuNjc4MiA4Mi45MTQ2IDI2Ljk0MkM4Mi4zMzU1IDI3LjIwNDQgODEuODE2MSAyNy41ODIzIDgxLjM4ODIgMjguMDUyNUM4MC45Mzk0IDI4LjUzOTcgODAuNTg2IDI5LjEwNjggODAuMzQ2MyAyOS43MjQzQzgwLjA3NzMgMzAuMzgzMSA3OS45NDAxIDMxLjA4ODMgNzkuOTQyNSAzMS43OTk5Qzc5LjkzNDcgMzIuNTM5OCA4MC4wNTIyIDMzLjI3NTcgODAuMjg5OCAzMy45NzY1QzgwLjUwNDggMzQuNjAyIDgwLjg0NCAzNS4xNzc1IDgxLjI4NzIgMzUuNjY4NEM4MS43MjMxIDM2LjE0MDYgODIuMjU2MyAzNi41MTI2IDgyLjg1IDM2Ljc1ODdDODMuNTAxNSAzNy4wMjEyIDg0LjE5OTEgMzcuMTUwMyA4NC45MDE0IDM3LjEzODNDODUuNjc2NiAzNy4xNjU2IDg2LjQ0ODcgMzcuMDI3OSA4Ny4xNjY4IDM2LjczNDVDODcuNjkxNiAzNi41MTQzIDg4LjE3NzEgMzYuMjEwMSA4OC42MDQzIDM1LjgzNEw5MC4wMDU2IDM4LjcxMzJaIiBmaWxsPSIjMDA0N0FCIi8+CjxwYXRoIGQ9Ik0xMDcuMTUyIDIzLjU2NjhWNDAuMDgyOEgxMDMuMTg2TDEwMy44OTcgMzcuNjU5OVYzMy4zNzE0SDk2LjUxNTFWMzcuNjQ3OEw5Ny4yMjE4IDQwLjA3MDdIOTMuMjYwNFYyMy41NTQ3SDk3LjIyMThMOTYuNTE1MSAyNS45Nzc2VjMwLjIwNTVIMTAzLjg5N1YyNi4wMDE4TDEwMy4xODYgMjMuNTc4OUwxMDcuMTUyIDIzLjU2NjhaIiBmaWxsPSIjMDA0N0FCIi8+CjxwYXRoIGQ9Ik02Mi42NzU0IDIzLjU2NjRINzMuOTQxOFYyNy40MTg4TDcxLjY0NDEgMjYuNzIwMkg2NS45MzAxVjMwLjI0MTRINzMuMDIxMVYzMy4zODMxSDY1LjkzMDFWMzYuOTUyOEg3MS45NjcxTDc0LjI1NjggMzYuMjQyMVY0MC4wOTQ1SDYyLjY3NTRWMjMuNTY2NFoiIGZpbGw9IiMwMDQ3QUIiLz4KPC9zdmc+Cg=="
+             style="width: 154px; height: 50px"/>
+    </div>
+    <div style="font-weight:bold;">{{app.company_name or ''}}</div>
+</div>
+
+<!-- Table 1 - Paticulars -->
+<!-- 4 columns -->
+<div class="table-wrap">
+    <table class="table column-4">
+        <thead>
+        <tr>
+            <td colspan="4" style="background-color: #eeeeee"><strong>The Following Are The Brief Paticulars
+                of:</strong></td>
+        </tr>
+        </thead>
+        <tbody>
+
+
+        <tr>
+            <td style="background-color: #eeeeee">ID</td>
+            <td>{{ app.name or '' }}</td>
+            <td style="background-color: #eeeeee">Status</td>
+            <td>{{ app.company_status or '' }}</td>
+        </tr>
+
+        <tr>
+            <td style="background-color: #eeeeee">Company Name</td>
+            <td colspan="4">{{app.company_name or ''}}</td>
+        </tr>
+
+        <tr>
+            <td style="background-color: #eeeeee">Registration No.</td>
+            <td></td>
+            <td style="background-color: #eeeeee">Incorporation Date</td>
+            <td></td>
+        </tr>
+
+
+        <tr>
+            <td style="background-color: #eeeeee">Incorporate Type</td>
+            <td>{{ app.incorporate_type or '' }}</td>
+            <td style="background-color: #eeeeee">Financial Year End</td>
+            <td>{{ app.financial_year_end or '' }}</td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<!-- Table 2 - Principal Activities -->
+<!-- 2 columns -->
+<div class="table-wrap">
+    <table class="table">
+        <thead>
+        <tr>
+            <td colspan="4" style="background-color: #eeeeee"><strong>Principal Activities</strong></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="w-25" style="background-color: #eeeeee">Activities (1)</td>
+            <td>{{ app.primary_activity_no or '' }}</td>
+        </tr>
+
+        <tr>
+            <td class="w-25" style="background-color: #eeeeee">Description</td>
+            <td>{{ app.primary_activity_name or '' }}</td>
+        </tr>
+
+        <tr>
+            <td class="w-25" style="background-color: #eeeeee">Activities (2)</td>
+            <td>{{ app.secondary_activity_no or '' }}</td>
+        </tr>
+
+        <tr>
+            <td class="w-25" style="background-color: #eeeeee">Description</td>
+            <td>{{ app.secondary_activity_name or '' }}</td>
+        </tr>
+
+
+        </tbody>
+    </table>
+</div>
+
+<!-- Table 3 - Service Condition -->
+<!-- 4 columns -->
+<div class="table-wrap">
+    <table class="table column-4">
+        <thead>
+        <tr>
+            <td colspan="4" style="background-color: #eeeeee"><strong>Service Condition</strong></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td style="background-color: #eeeeee">Transfer In</td>
+            <td>{{ app.transfer_in or '' }}</td>
+            <td style="background-color: #eeeeee">Transfer Out</td>
+            <td>{{ app.transfer_out or '' }}</td>
+        </tr>
+
+        <tr>
+            <td style="background-color: #eeeeee">Date of Striking Off</td>
+            <td colspan="3">{{ app.date_striking or '' }}</td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<!-- Table 4 - Registered Office Address -->
+<!-- 2 columns -->
+<div class="table-wrap">
+    <table class="table">
+        <thead>
+        <tr>
+            <td colspan="2" style="background-color: #eeeeee"><strong>Registered Office Address</strong></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="w-25" style="background-color: #eeeeee">Address line 1</td>
+            <td>{{ app.addr_1 or '' }}</td>
+        </tr>
+
+        <tr>
+            <td class="w-25" style="background-color: #eeeeee">Address line 2</td>
+            <td>{{ app.addr_2 or '' }}</td>
+        </tr>
+
+        <tr>
+            <td class="w-25" style="background-color: #eeeeee">Postcode</td>
+            <td>{{ app.postcode or '' }}</td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<!-- Table 5 - Basic Details -->
+<!-- 2 columns -->
+<div class="table-wrap">
+    <table class="table">
+        <tbody>
+        <tr>
+            <td class="w-25" style="background-color: #eeeeee">Name (PIC)</td>
+            <td>{{ app.full_name or '' }}</td>
+        </tr>
+
+        <tr>
+            <td class="w-25" style="background-color: #eeeeee">Phone Number</td>
+            <td>{{ app.mobile_no or '' }}</td>
+        </tr>
+
+        <tr>
+            <td class="w-25" style="background-color: #eeeeee">Work Phone</td>
+            <td>{{ app.phone or '' }}</td>
+        </tr>
+
+        <tr>
+            <td class="w-25" style="background-color: #eeeeee">E-mailL</td>
+            <td>{{ app.email or '' }}</td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<!-- Table 6 - Memo -->
+<!-- 2 columns -->
+<div class="table-wrap">
+    <table class="table">
+        <tbody>
+        <tr>
+            <td class="w-25" style="background-color: #eeeeee">Memo</td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<br/>
+
+
+<!-- Table 7 - Officer Information -->
+{% if app.total_officers > 0 %}
+<div class="">
+    <table class="table">
+        <thead>
+        <tr>
+            <td colspan="4" style="background-color: #eeeeee"><strong>Officers Information</strong></td>
+        </tr>
+        </thead>
+    </table>
+</div>
+{% endif %}
+
+<!-- Table 8 - Officer -->
+<!-- 4 columns -->
+{% if app.total_officers > 0 %}
+{% for officer in app.officers %}
+<div class="table-wrap">
+    <table class="table column-4">
+        <tbody>
+        <tr>
+            <td colspan="4" style="background-color: #cccccc;">Officer {{ loop.index }} - <strong>{{ officer.full_name
+                or '' }}</strong></td>
+        </tr>
+
+
+        <tr>
+            <td style="background-color: #eeeeee">Full Name</td>
+            <td colspan="4">{{ officer.full_name or '' }}</td>
+        </tr>
+
+        <tr>
+            <td style="background-color: #eeeeee">Former Full Name</td>
+            <td colspan="4">{{ officer.former_full_name or '' }}</td>
+        </tr>
+
+        <tr>
+            <td style="background-color: #eeeeee">Normal Designation</td>
+            <td colspan="4">{{ officer.designation or '' }}</td>
+        </tr>
+
+        <tr>
+            <td style="background-color: #eeeeee">ID Type</td>
+            <td>{{ officer.id_type or '' }}</td>
+            <td style="background-color: #eeeeee">ID No.</td>
+            <td>{{ officer.id_number or '' }}</td>
+        </tr>
+
+        <tr>
+            <td style="background-color: #eeeeee">Sex</td>
+            <td>{{ officer.gender or "" }}</td>
+            <td style="background-color: #eeeeee">Birth</td>
+            <td>{{ officer.dob or ""}}</td>
+        </tr>
+        <tr>
+            <td style="background-color: #eeeeee">Nationality</td>
+            <td>{{ officer.nationality or ""}}</td>
+            <td style="background-color: #eeeeee">Country of Birth</td>
+            <td>{{ officer.country_birth or "" }}</td>
+        </tr>
+
+        <tr>
+            <td style="background-color: #eeeeee">Address Line 1</td>
+            <td colspan="4">{{ officer.address_1 or "" }}</td>
+        </tr>
+
+        <tr>
+            <td style="background-color: #eeeeee">Address Line 2</td>
+            <td colspan="4">{{ officer.address_2 or "" }}</td>
+        </tr>
+
+        <tr>
+            <td style="background-color: #eeeeee">Postal</td>
+            <td colspan="4">{{ officer.postal_code or "" }}</td>
+        </tr>
+
+        <tr>
+            <td style="background-color: #eeeeee">Email</td>
+            <td colspan="4">{{ officer.email or "" }}</td>
+        </tr>
+
+        <tr>
+            <td style="background-color: #eeeeee">Mobile</td>
+            <td colspan="4">{{ officer.mobile or "" }}</td>
+        </tr>
+
+        <tr>
+            <td style="background-color: #eeeeee">Remark</td>
+            <td colspan="4"></td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+<br/>
+{% endfor %}
+{% endif %}
+
+
+<!-- Table 9 - Capital Information  -->
+<!-- 2 columns -->
+<div class="table-wrap">
+    <table class="table">
+        <thead>
+        <tr>
+            <td colspan="2" style="background-color:#eeeeee;"><strong>Capital Information</strong></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="w-25" style="background-color: #eeeeee">Used Currency</td>
+            <td>{{ app.capital_currency or '' }}</td>
+        </tr>
+
+        <tr>
+            <td class="w-25" style="background-color: #eeeeee">Start ~ End</td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Table 10 - ShareDetails -->
+<div class="table-wrap">
+    <table class="table column-4">
+        <thead>
+        <tr>
+            <td><strong>Class of shares</strong></td>
+            <td class="center"><strong>Ordinary</strong></td>
+            <td class="center"><strong>Preference</strong></td>
+            <td class="center"><strong>Others</strong></td>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+            <td>Number of shares</td>
+            <td class="center">{{ app.no_issue_share or '0'}}</td>
+            <td class="center"></td>
+            <td class="center"></td>
+        </tr>
+
+        <tr>
+            <td>Nominal amount of each share</td>
+            <td class="center">{{ app.each_share_price or '0.0'}}</td>
+            <td class="center"></td>
+            <td class="center"></td>
+        </tr>
+
+        <tr>
+            <td>Amount paid or due and payable on each share
+                paid due and payable
+            </td>
+            <td class="center">0</td>
+            <td class="center"></td>
+            <td class="center"></td>
+        </tr>
+
+
+        <tr>
+            <td>Amount of premium paid or payable on each Share</td>
+            <td class="center"></td>
+            <td class="center"></td>
+            <td class="center"></td>
+        </tr>
+
+        <tr>
+            <td colspan="4" class="center">
+                The consideration for which the shares have been so allotted is as follows:
+                <div>N/A</div>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
