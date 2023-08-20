@@ -1,0 +1,105 @@
+.tl {
+    height: 30px;
+    line-height: 30px;
+    padding-left: 20px;
+}
+
+.heading {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* Table 1 */
+.table-first {
+    width: 100%;
+}
+
+.table-first td {
+    font-size: 16px;
+    padding: 8px 0;
+}
+
+.table-first td:first-child {
+    width: 20%;
+}
+
+.table-first td:nth-child(2) {
+    width: 80%;
+}
+
+/* Table 2 */
+.table-second {
+    width: 100%;
+}
+
+.table-second td {
+    font-size: 16px;
+    padding: 8px 0;
+    text-align: justify;
+}
+
+/* Table 3 */
+.table-date {
+    width: 100%;
+}
+
+/* Table 4 */
+.table-shareholder {
+    width: 100%;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.table-shareholder td {
+    padding: 8px 0;
+}
+
+
+.table-shareholder td:first-child {
+    width: 20%;
+    text-align: center;
+}
+
+
+.table-shareholder td:nth-child(2) {
+    width: 50%;
+    text-align: left;
+}
+
+.table-shareholder td:nth-child(3) {
+    width: 30%;
+    text-align: center;
+}
+
+/* Table 5 */
+.table-signature {
+    width: 100%;
+}
+
+.table-signature td {
+    padding: 12px 0;
+}
+
+
+.table-signature td:first-child {
+    width: 20%;
+    text-align: center;
+}
+
+
+.table-signature td:nth-child(2) {
+    width: 50%;
+    text-align: left;
+}
+
+.table-signature td:nth-child(3) {
+    width: 30%;
+    text-align: center;
+}
+
+
+.sign-line {
+    border-bottom: 1px solid #000;
+}

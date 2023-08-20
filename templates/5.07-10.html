@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet"
+          href="https://staging.erp.leekim.online/assets/leekimerp/css/pdf_reset.css">
+    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:5000/static/5.07-10.css">
+    <title>APPLICATION FOR SHARES</title>
+    <style></style>
+</head>
+
+<body>
+
+
+{% set officer_full_name = app.officers_shareholders[0].full_name|default('') %}
+
+{% set officer_certificate_number = app.officers_shareholders[0].shareholder_certificate_number|default('') %}
+
+{% set officer_shareholder_share = app.officers_shareholders[0].shareholder_share|default('0') %}
+
+{% set total_shareholders = app.total_shareholders %}
+{% set each_share_price = app.each_share_price %}
+{% set nominal_total_amount = (total_shareholders | default(0) | int) * (each_share_price | default(0) | int) %}
+
+
+{% set capital_currency = "SGD" if app.capital_currency == "" else app.capital_currency %}
+
+
+<div>
+    <br>
+    <div class="heading">APPLICATION FOR SHARES</div>
+    <br>
+    <br>
+
+    <!--   Table 2 column -->
+    <table class="table-first">
+        <tr>
+            <td>To :</td>
+            <td>The Directors</td>
+        </tr>
+        <tr>
+            <td> &nbsp;</td>
+            <td><b>{{ app.company_name or '' }}</b></td>
+        </tr>
+        <tr>
+            <td> &nbsp;</td>
+            <td>{{ app.name or '' }}</td>
+        </tr>
+        <tr>
+            <td> &nbsp;</td>
+            <td>{{ app.addr_1 }}</td>
+        </tr>
+        <tr>
+            <td> &nbsp;</td>
+            <td>{{ app.addr_1 }} {{ app.postcode }}</td>
+        </tr>
+    </table>
+    <br/>
+    <br/>
+    <b>Gentlemen,</b>
+    <br/>
+    <br/>
+
+    <table class="table-second">
+        <tr>
+            <td>
+                &nbsp;&nbsp; I / (We) {{ officer_full_name }} hereby apply for and request you to allot {{
+                officer_shareholder_share }} Ordinary Share(s) in the {{ app.company_name
+                }}, for which the sum of {{ capital_currency }} {{ nominal_total_amount }} cash or cash
+                equivalent is due and payable on allotment.
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                I / (We) undertake and agree to accept this number of shares allotted to us upon the terms of the
+                Constitution of the Company, and we authorised you to place our name on the Register of Members of the
+                Company in respect of the shares allotted to us.
+            </td>
+        </tr>
+    </table>
+    <br/>
+    <br/>
+
+    <table class="table-date">
+        <tr>
+            <td colspan="2"> Dated this :
+                ________________________________ day of __________________________________ ___________
+            </td>
+        </tr>
+    </table>
+    <br/>
+    <br/>
+
+
+    <table class="table-shareholder">
+        <tr>
+            <td><b>S/N </b></td>
+            <td><b>Name of Shareholder </b></td>
+            <td><b>Signature by the Shareholder</b></td>
+        </tr>
+    </table>
+
+    <table class="table-signature">
+        <tr>
+            <td><br><br>{{ officer_certificate_number }}
+            </td>
+            <td><br><br>{{ officer_full_name }}</td>
+            <td><br><br>
+                {{ app.signature or '' }}
+                <div class="sign-line"></div>
+            </td>
+        </tr>
+    </table>
+    <br/>
+    <br/>
+    <br/>
+
+
+</div>
+
+
+</body>
+</html>

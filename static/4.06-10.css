@@ -1,0 +1,201 @@
+.intro {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 32px;
+}
+
+.spacer-1 {
+    width: 54px;
+}
+
+.intro-left {
+    width: 590px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 0.7;
+    border: 1px solid #000;
+    padding: 48px;
+}
+
+
+.spacer-2 {
+    width: 120px;
+}
+
+
+.intro-right {
+    width: 140px;
+    text-align: center;
+    line-height: 1.5;
+    border-left: 0.5px solid #000;
+    border-bottom: 0.5px solid #000;
+    padding: 48px;
+}
+
+.into-heading-1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.into-heading-2 {
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.fill {
+
+}
+
+/* Table  1 */
+.fill-table-1 {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.fill-table-1 td {
+    font-size: 16px;
+    padding: 2px 0;
+}
+
+.fill-table-1 td:nth-child(2) {
+    width: 80%;
+    border-bottom: 0.8px solid #000;
+}
+
+
+/* Table 2 - 2 columns */
+.fill-table-2 {
+    width: 100%;
+}
+
+.fill-table-2 td {
+    font-size: 16px;
+}
+
+
+.fill-table-div {
+    margin-bottom: 24px;
+}
+
+.fill-table-2 td:first-child {
+    width: 90%;
+}
+
+/* Table 3 - 4 Columns */
+.fill-table-3 {
+    width: 100%;
+    border: 1px solid #000;
+}
+
+.fill-table-3 td {
+    padding: 4px 8px;
+    border: 1px solid #000;
+}
+
+.fill-table-3 td:first-child {
+    text-align: left;
+    width: 50%;
+}
+
+.fill-table-3 td:nth-child(2) {
+    text-align: center;
+}
+
+.fill-table-3 td:nth-child(3) {
+    text-align: center;
+}
+
+.fill-table-3 td:nth-child(4) {
+    text-align: center;
+}
+
+
+/* Table 4 - 4 columns */
+.fill-table-4 {
+    width: 100%;
+}
+
+
+/* Page 2 */
+.arial-italic {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: italic;
+    text-align: left;
+}
+
+.spacer-cell {
+    width: 32px;
+}
+
+
+/* Company Name and Company No */
+.table-company-intro {
+    width: 100%;
+}
+
+.table-company-intro td:first-child {
+    vertical-align: top;
+    width: 30%;
+}
+
+.table-company-intro td:nth-child(2) {
+    border-bottom: 1px solid #000000;
+    vertical-align: top;
+    padding: 4px 0;
+}
+
+
+/* Shareholder */
+.page-2-table {
+    width: 100%;
+    font-size: 16px;
+}
+
+
+/* Page 3 */
+
+.page-3-alot-table {
+    width: 100%;
+    border: 1px solid #000;
+}
+
+.page-3-alot-table td {
+    border: 1px solid #000;
+    padding: 8px;
+}
+
+.page-3-alot-table td:first-child {
+    text-align: left;
+    width: 45%;
+}
+
+.page-3-alot-table td:nth-child(2) {
+    text-align: center;
+    width: 18%;
+}
+
+.page-3-alot-table td:nth-child(3) {
+    text-align: center;
+    width: 18%;
+}
+
+.page-3-alot-table td:nth-child(4) {
+    text-align: center;
+    width: 19%;
+}
+
+
+/* Director */
+.page-3-director-table {
+    width: 100%;
+}
+
+.page-3-director-table td {
+    vertical-align: top;
+}
+
+.tr-vertical-gap {
+    height: 20px;
+}

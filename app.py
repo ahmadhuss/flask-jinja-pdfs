@@ -26,7 +26,7 @@ def index():
     data = get_dummy_data()
 
     # Render the template
-    rendered_template = render_template('3.01-30.html', app=data)
+    rendered_template = render_template('5.07-10.html', app=data)
 
     # Define options for PDF generation
     options = {
