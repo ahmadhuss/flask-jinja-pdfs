@@ -13,11 +13,15 @@
 <body>
 
 
+{% if app.officers_shareholders is iterable and app.officers_shareholders|length > 0 %}
 {% set officer_full_name = app.officers_shareholders[0].full_name|default('') %}
-
 {% set officer_certificate_number = app.officers_shareholders[0].shareholder_certificate_number|default('') %}
-
-{% set officer_shareholder_share = app.officers_shareholders[0].shareholder_share|default('0') %}
+{% set officer_shareholder_share = app.officers_shareholders[0].shareholder_share|default('') %}
+{% else %}
+{% set officer_full_name = '' %}
+{% set officer_certificate_number = '' %}
+{% set officer_shareholder_share = '' %}
+{% endif %}
 
 {% set total_shareholders = app.total_shareholders %}
 {% set each_share_price = app.each_share_price %}
@@ -58,7 +62,7 @@
     </table>
     <br/>
     <br/>
-    <b>Gentlemen,</b>
+    <b style="font-size: 16px;">Gentlemen,</b>
     <br/>
     <br/>
 
@@ -67,8 +71,8 @@
             <td>
                 &nbsp;&nbsp; I / (We) {{ officer_full_name }} hereby apply for and request you to allot {{
                 officer_shareholder_share }} Ordinary Share(s) in the {{ app.company_name
-                }}, for which the sum of {{ capital_currency }} {{ nominal_total_amount }} cash or cash
-                equivalent is due and payable on allotment.
+                }}, for which the sum of {{ capital_currency }} {{ nominal_total_amount }} cash or cash equivalent is
+                due and payable on allotment.
             </td>
         </tr>
 

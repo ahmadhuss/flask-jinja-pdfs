@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet"
+          href="https://staging.erp.leekim.online/assets/leekimerp/css/pdf_reset.css">
+    <title>FORM 45B</title>
+    <style></style>
+</head>
+
+<body>
+
+
+{% if app.officers_secretaries is iterable and app.officers_secretaries|length > 0 %}
+{% set officer_full_name = app.officers_secretaries[0].full_name|default('') %}
+{% set officer_address_1 = app.officers_secretaries[0].address_1|default('') %}
+{% set officer_address_2 = app.officers_secretaries[0].address_2|default('') %}
+{% set officer_postal_code = app.officers_secretaries[0].postal_code|default('') %}
+{% set officer_id_number = app.officers_secretaries[0].id_number|default('') %}
+{% set officer_id_type = app.officers_secretaries[0].id_type|default('') %}
+{% set officer_nationality = app.officers_secretaries[0].nationality|default('') %}
+{% set officer_certificate_number = app.officers_secretaries[0].shareholder_certificate_number|default('') %}
+{% set officer_shareholder_share = app.officers_secretaries[0].shareholder_share|default('') %}
+{% else %}
+{% set officer_full_name = '' %}
+{% set officer_address_1 = '' %}
+{% set officer_address_2 = '' %}
+{% set officer_postal_code = '' %}
+{% set officer_id_number = '' %}
+{% set officer_id_type = '' %}
+{% set officer_nationality = '' %}
+{% set officer_certificate_number = '' %}
+{% set officer_shareholder_share = '' %}
+{% endif %}
+
+
+{% set total_shareholders = app.total_shareholders %}
+{% set each_share_price = app.each_share_price %}
+{% set nominal_total_amount = (total_shareholders | default(0) | int) * (each_share_price | default(0) | int) %}
+
+
+{% set capital_currency = "SGD" if app.capital_currency == "" else app.capital_currency %}
+
+
+<div>
+    <style>
+
+        .tl {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .tc {
+            text-align: center;
+        }
+
+    </style>
+    <br/>
+    <br/>
+    <table>
+        <tr>
+            <td rowspan="2" width="25%"></td>
+            <td rowspan="2" align="center" width="60%">
+                <table border="1" width="300" height="300">
+                    <tr>
+                        <td align="center" style="font-size:13px; font-weight: bold; line-height: 20px">
+                            <br/>THE COMPANIES ACT
+                            <br/>(CHAPTER 50)
+                            <br/>SECTION 173C(b)
+                            <br/>CONSENT TO ACT AS
+                            <br/>SECRETARY
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="absmiddle" width="15%" height="25" style="border: solid 2px #000;line-height: 20px">
+                <span style="padding: 10px; font-size:13px;"><b>FORM 45B</b></span>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    <br/>
+    <br/>
+    <br/>
+    <table border="0" width="100%">
+        <tr>
+            <td class="tl" width="30%" valign="absmiddle" style="font-size:14px;"><b> Name of Company : </b></td>
+            <td class="tl" width="70%" height="20" valign="absmiddle" style="border-bottom: solid 1px #000000;"><b>{{
+                app.company_name }} </b></td>
+        </tr>
+        <tr>
+            <td class="tl" width="30%" valign="absmiddle"></td>
+            <td class="tl" width="70%" valign="absmiddle"></td>
+        </tr>
+        <tr>
+            <td class="tl" width="30%" align="left"><b> Company No : </b></td>
+            <td class="tl" width="70%" height="20" valign="absmiddle" style="border-bottom: solid 1px #000000;"><b>{{
+                app.uen }}</b></td>
+        </tr>
+        <tr>
+            <td class="tl" width="30%" valign="absmiddle"></td>
+            <td class="tl" width="70%" valign="absmiddle"></td>
+        </tr>
+        <tr>
+            <td class="tl" width="30%" valign="absmiddle"></td>
+            <td class="tl" width="70%" valign="absmiddle"></td>
+        </tr>
+        <tr>
+            <td width="4%">1.</td>
+            <td width="96%">I, the undermentioned person, hereby consent to act as a secretary of the abovenamed company
+                with effect from
+                company, with effect from <b>{{ app.effect_date or '' }}</b> (date)
+                <br/>
+            </td>
+        </tr>
+        <tr>
+            <td width="4%">2.</td>
+            <td width="96%">I am a qualified person under section 171 (1AA) of the Companies Act by virtue of my being —
+                <br/>
+                <br/>*(i) a secretary of a company for at least 3 years of the 5 years immediately preceding the
+                abovementioned date
+                of my appointment as secretary of the abovenamed company.
+                <br/>
+                <br/><s>*(ii) a qualified person under the Legal Profession Act (Cap. 161).</s>
+                <br/>
+                <br/><s>*(iii) a public accountant.</s>
+                <br/>
+                <br/><s>*(iiia) a member of the Institute of Singapore Chartered Accountants (formerly known as the
+                    Institute of Certified
+                    Public Accountants of Singapore).</s>
+                <br/>
+                <br/><s>*(iv) a member of the Chartered Secretaries Institute of Singapore. </s>
+                <br/>
+                <br/><s>*(v) a member of the Association of International Accountants (Singapore Branch).</s>
+                <br/>
+                <br/><s>*(vi) a member of The Institute of Company Accountants, Singapore.</s>
+            </td>
+        </tr>
+    </table>
+    <br/>
+    <br/>
+    <br/>
+
+    <table border="0" width="100%" align="left">
+        <tr>
+            <td class="tl" width="30%" height="15" valign="absmiddle"> Name :</td>
+            <td class="tl" width="70%" height="15" valign="absmiddle" style="border-bottom: solid 1px #000000;"> {{
+                officer_full_name }}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" height="10"></td>
+        </tr>
+        <tr>
+            <td class="tl" width="30%" height="15" align="left"> Address :</td>
+            <td class="tl" width="70%" height="15" valign="absmiddle" style="border-bottom: solid 1px #000000;"><br> {{
+                officer_address_1 }} {{ officer_address_2 }} {{
+                officer_postal_code }}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" height="10"></td>
+        </tr>
+        <tr>
+            <td class="tl" width="30%" height="15" align="left"> {{ officer_id_type }} No.:</td>
+            <td class="tl" width="70%" height="15" valign="absmiddle" style="border-bottom: solid 1px #000000;"> {{
+                officer_id_number }}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" height="10"></td>
+        </tr>
+        <tr>
+            <td class="tl" width="30%" height="15" align="left"> Nationality :</td>
+            <td class="tl" width="70%" height="15" valign="absmiddle" style="border-bottom: solid 1px #000000;"> {{
+                officer_nationality }}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" height="30"></td>
+        </tr>
+        <tr>
+            <td class="tl" width="30%" height="15" align="left"> Signature :</td>
+            <td class="tl" width="70%" height="15" align="center" valign="absmiddle">
+                <span style="color: white; font-size: 1px">{{ app.signature }}</span>
+                <hr>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" height="15"></td>
+        </tr>
+        <tr>
+            <td class="tl" width="100%" height="15" align="left" colspan="2"> Dated this :
+                _________________________________ day of _________________________________________
+            </td>
+        </tr>
+    </table>
+    <div style="font-size:9px;">
+        <p>To be completed by secretaries of public companies only or by secretaries of private companies appointed
+            under section 171(1AB) of the
+            Act.</p>
+        <p>*Delete where inapplicable</p>
+    </div>
+
+
+</div>
+
+</body>
+</html>
