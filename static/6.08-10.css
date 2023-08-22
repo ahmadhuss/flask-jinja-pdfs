@@ -1,0 +1,118 @@
+/* Table 1 */
+.intro {
+    width: 100%;
+    border: 0;
+}
+
+
+.intro td:first-child {
+    width: 50%;
+    padding-left: 180px;
+    vertical-align: top;
+}
+
+.intro td:nth-child(2) {
+    width: 15%;
+    vertical-align: top;
+}
+
+/* Middle Box */
+.box-1 {
+    width: 400px;
+    margin: 0 auto;
+    border: 2px solid #000;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* FORM 45B */
+.box-2 {
+    border: 1px solid #000;
+    width: 120px;
+    margin-left: auto;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px;
+    padding-top: 4px;
+    padding-bottom: 8px;
+}
+
+
+/* Info Table */
+.info-table {
+    width: 100%;
+}
+
+.w-4 {
+    width: 4%;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.w-70 {
+    width: 70%;
+}
+
+.w-96 {
+    width: 96%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+
+.text-cell {
+    padding: 8px 0;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+
+/* Normal Table */
+.text-normal-table {
+    width: 100%;
+}
+
+.text-normal-table td {
+    font-size: 17px;
+    font-weight: normal;
+    vertical-align: top;
+    padding: 12px 0;
+}
+
+
+/* Shareholder Table */
+.shareholder-table {
+    width: 100%;
+    /*border: 1px solid #eee;*/
+}
+
+.shareholder-table td {
+    /*border: 1px solid #eee;*/
+    font-size: 17px;
+    font-weight: normal;
+    padding: 0;
+}
+
+.shareholder-table tr td:first-child {
+    width: 292px;
+}
+
+.shareholder-table td:nth-child(2) {
+    /*width: 100%;*/
+}
+
+
+.last-text {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+
+
+
+

@@ -1,12 +1,10 @@
 import pdfkit
 from flask import Flask, render_template, Response
+from livereload import Server
 
 from utils import get_dummy_data
 
 app = Flask(__name__)
-
-app.config['DEBUG'] = True
-app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 # Set the path to the wkhtmltopdf executable
 # Windows
@@ -21,12 +19,12 @@ config = pdfkit.configuration(wkhtmltopdf=r'C:\Program Files\wkhtmltopdf\bin\wkh
 # config = pdfkit.configuration(wkhtmltopdf='/path/to/wkhtmltopdf')
 
 
-@app.route('/')
+@app.get('/')
 def index():
     data = get_dummy_data()
 
     # Render the template
-    rendered_template = render_template('6.08-10.html', app=data)
+    rendered_template = render_template('6.08-10.html', app=data, viewer=False)
 
     # Define options for PDF generation
     options = {
@@ -48,5 +46,19 @@ def index():
     return response
 
 
+@app.get('/viewer')
+def viewer():
+    data = get_dummy_data()
+
+    # Render the template
+    return render_template('6.08-10.html', app=data, viewer=True)
+
+
 if __name__ == '__main__':
-    app.run(debug=True, use_reloader=True, port=5000)
+    app.debug = True
+    app.run(port=5000)
+
+    # live_server = Server(app.wsgi_app)
+    # # live_server.watch('templates/*')
+    # # live_server.watch('static/*')
+    # live_server.serve(port=5000)

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet"
+          href="https://staging.erp.leekim.online/assets/leekimerp/css/pdf_reset.css">
+    <title>SHARES CERTIFICATE</title>
+    <style></style>
+</head>
+
+<body>
+
+
+{% if app.officers_shareholders is iterable and app.officers_shareholders|length > 0 %}
+{% set officer_full_name = app.officers_shareholders[0].full_name|default('') %}
+{% set officer_address_1 = app.officers_shareholders[0].address_1|default('') %}
+{% set officer_address_2 = app.officers_shareholders[0].address_2|default('') %}
+{% set officer_postal_code = app.officers_shareholders[0].postal_code|default('') %}
+{% set officer_id_number = app.officers_shareholders[0].id_number|default('') %}
+{% set officer_id_type = app.officers_shareholders[0].id_type|default('') %}
+{% set officer_nationality = app.officers_shareholders[0].nationality|default('') %}
+{% set officer_certificate_number = app.officers_shareholders[0].shareholder_certificate_number|default('') %}
+{% set officer_shareholder_share = app.officers_shareholders[0].shareholder_share|default(0)|int %}
+{% set officer_share_amount_paid = app.officers_shareholders[0].share_amount_paid|default(0)|int %}
+{% set officer_share_amount_unpaid = app.officers_shareholders[0].officer_share_amount_unpaid|default(0)|int %}
+{% set officer_share_in_word = app.officers_shareholders[0].officer_share_in_word|default('') %}
+{% else %}
+{% set officer_full_name = '' %}
+{% set officer_address_1 = '' %}
+{% set officer_address_2 = '' %}
+{% set officer_postal_code = '' %}
+{% set officer_id_number = '' %}
+{% set officer_id_type = '' %}
+{% set officer_nationality = '' %}
+{% set officer_certificate_number = '' %}
+{% set officer_shareholder_share = 0 %}
+{% set officer_share_amount_paid = 0 %}
+{% set officer_share_amount_unpaid = 0 %}
+{% set officer_share_in_word = '' %}
+{% endif %}
+
+
+{% set total_shareholders = app.total_shareholders %}
+{% set each_share_price = app.each_share_price %}
+{% set nominal_total_amount = (total_shareholders | default(0) | int) * (each_share_price | default(0) | int) %}
+
+
+{% set capital_currency = "SGD" if app.capital_currency == "" else app.capital_currency %}
+
+
+<div>
+    <table>
+        <tr>
+            <td width="70%">Certificate No. * {{officer_certificate_number}} *</td>
+            <td width="30%">
+                <table>
+                    <tr>
+                        <td style="width: 100px">No. of Shares</td>
+                        <td>: *{{ officer_shareholder_share }}*</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px">Amount Paid</td>
+                        {% if officer_share_amount_paid > 0 %}
+                        <td>: <b>{{ officer_share_amount_paid }} ({{
+                            capital_currency }})</b></td>
+                        {% else %}
+                        <td>: <b>Nil</b></td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        <td style="width: 100px">Amount Unpaid</td>
+                        {% if officer_share_amount_unpaid >= 0 %}
+                        <td>: <b>{{ officer_share_amount_unpaid}} ({{
+                            capital_currency }})</b></td>
+                        {% else %}
+                        <td>: <b>Nil</b></td>
+                        {% endif %}
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+
+    <style>
+        .ca {
+            text-align: center;
+        }
+    </style>
+    <table>
+        <tr>
+            <td class="ca" style="font-size: 30px"><b>{{ app.company_name }} </b></td>
+        </tr>
+        <tr>
+            <td class="ca" style="font-size: 11px"><br/><br/>Company Registration No. {{ app.uen }}<br/>
+                (Incorporated in the Republic of Singapore under the Companies Act, Cap. 50)<br/>
+            </td>
+        </tr>
+
+    </table>
+
+    <table>
+        <tr>
+            <td width="10%"></td>
+            <td width="15%" style="font-size: 15px;">Registered Address :</td>
+            <td width="80%" style="font-size: 15px; text-align: left;">{{ app.addr_1 }} {{
+                app.addr_2 }} ({{ app.postcode }})<br></td>
+        </tr>
+    </table>
+
+
+    <table>
+        <tr>
+            <td width="5%"></td>
+            <td width="30%" rowspan="2" style="font-size: 20px; font-style: italic; font-weight:bold;">This is to
+                certify that,
+            </td>
+            <td width="60%" style="font-size: 20px; font-style: italic; font-weight:bold;"><b>{{
+                officer_full_name }}</b></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>{{ officer_address_1 }} <br/>{{ officer_address_2 }} {{
+                officer_postal_code }}<br></td>
+        </tr>
+    </table>
+
+
+    <table>
+        <tr>
+            <td width="5%"></td>
+            <td width="90%">is/are Registered Holder of &nbsp; <b>&nbsp;{{ officer_share_in_word }}</b></td>
+        </tr>
+        <tr>
+            <td width="5%"></td>
+            {% if officer_share_amount_paid %}
+            {% if officer_shareholder_share == officer_share_amount_paid %}
+            <td>Ordinary shares fully paid in above Company subject to the Constitution of the Company<br></td>
+            {% else %}
+            <td>Ordinary shares partially paid {{ officer_share_amount_paid }} ({{ capital_currency }}) in above Company
+                subject to the Constitution of the Company<br>
+            </td>
+            {% endif %}
+            {% else %}
+            <td>Ordinary shares unpaid in above Company subject to the Constitution of the Company<br></td>
+            {% endif %}
+        </tr>
+        <tr>
+            <td width="10%"></td>
+            <td width="50%">Issued this {{ app.effect_date }}</td>
+            <td width="35%">
+                <br/><br/><br/><br/>
+                <table>
+                    {% if app.officers_directors|length %}
+                    <tr>
+                        <td style="border-bottom:1px solid black">{{ app.officers_directors.0.full_name }}</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 10px;">Director<br><br></td>
+                    </tr>
+                    {% endif %}
+                    {% if app.officers_secretaries|length %}
+                    <tr>
+                        <td style="border-bottom:1px solid black">{{ app.officers_secretaries.0.full_name }}</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 10px;">Secretary<br><br></td>
+                    </tr>
+                    {% endif %}
+                    <tr>
+                        <td style="font-size: 8px;">No transfer of any portion of the Shares comprised in this</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 8px;">Certificate will be registered unless accompanied by this
+                            Certificate.
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+    </table>
+
+</div>
+
+</body>
+</html>

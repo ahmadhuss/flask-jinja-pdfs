@@ -1,0 +1,18 @@
+body {
+    background-color: #818181;
+}
+
+.page-portrait {
+    /*width: 7.5in;*/
+    width: 8.275in; /* Follow chrome PDF Viewer width */
+    margin-left: auto;
+    margin-right: auto
+}
+
+.page-portrait {
+    background-color: #fff;
+    border: 1px solid gray;
+    /*height: 10in;*/
+    padding: 3.5em 3.5em; /* 15mm i.e. 56px */
+    position: relative
+}

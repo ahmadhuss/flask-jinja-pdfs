@@ -5,120 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet"
           href="https://staging.erp.leekim.online/assets/leekimerp/css/pdf_reset.css">
+
+    <link type="text/css" rel="stylesheet"
+          href="http://127.0.0.1:5000/static/6.08-10.css">
     <title>FORM 45B</title>
-    <style></style>
 </head>
 
 <body>
 
-
-{% if app.officers_secretaries is iterable and app.officers_secretaries|length > 0 %}
-{% set officer_full_name = app.officers_secretaries[0].full_name|default('') %}
-{% set officer_address_1 = app.officers_secretaries[0].address_1|default('') %}
-{% set officer_address_2 = app.officers_secretaries[0].address_2|default('') %}
-{% set officer_postal_code = app.officers_secretaries[0].postal_code|default('') %}
-{% set officer_id_number = app.officers_secretaries[0].id_number|default('') %}
-{% set officer_id_type = app.officers_secretaries[0].id_type|default('') %}
-{% set officer_nationality = app.officers_secretaries[0].nationality|default('') %}
-{% set officer_certificate_number = app.officers_secretaries[0].shareholder_certificate_number|default('') %}
-{% set officer_shareholder_share = app.officers_secretaries[0].shareholder_share|default('') %}
-{% else %}
-{% set officer_full_name = '' %}
-{% set officer_address_1 = '' %}
-{% set officer_address_2 = '' %}
-{% set officer_postal_code = '' %}
-{% set officer_id_number = '' %}
-{% set officer_id_type = '' %}
-{% set officer_nationality = '' %}
-{% set officer_certificate_number = '' %}
-{% set officer_shareholder_share = '' %}
-{% endif %}
-
-
-{% set total_shareholders = app.total_shareholders %}
-{% set each_share_price = app.each_share_price %}
-{% set nominal_total_amount = (total_shareholders | default(0) | int) * (each_share_price | default(0) | int) %}
-
-
-{% set capital_currency = "SGD" if app.capital_currency == "" else app.capital_currency %}
-
-
 <div>
-    <style>
+    {% if app.officers_secretaries is iterable and app.officers_secretaries|length > 0 %}
+    {% set officer_full_name = app.officers_secretaries[0].full_name|default('') %}
+    {% set officer_address_1 = app.officers_secretaries[0].address_1|default('') %}
+    {% set officer_address_2 = app.officers_secretaries[0].address_2|default('') %}
+    {% set officer_postal_code = app.officers_secretaries[0].postal_code|default('') %}
+    {% set officer_id_number = app.officers_secretaries[0].id_number|default('') %}
+    {% set officer_id_type = app.officers_secretaries[0].id_type|default('') %}
+    {% set officer_nationality = app.officers_secretaries[0].nationality|default('') %}
+    {% set officer_certificate_number = app.officers_secretaries[0].shareholder_certificate_number|default('') %}
+    {% set officer_shareholder_share = app.officers_secretaries[0].shareholder_share|default('') %}
+    {% else %}
+    {% set officer_full_name = '' %}
+    {% set officer_address_1 = '' %}
+    {% set officer_address_2 = '' %}
+    {% set officer_postal_code = '' %}
+    {% set officer_id_number = '' %}
+    {% set officer_id_type = '' %}
+    {% set officer_nationality = '' %}
+    {% set officer_certificate_number = '' %}
+    {% set officer_shareholder_share = '' %}
+    {% endif %}
 
-        .tl {
-            text-align: left;
-            padding-left: 20px;
-        }
 
-        .tc {
-            text-align: center;
-        }
+    {% set total_shareholders = app.total_shareholders %}
+    {% set each_share_price = app.each_share_price %}
+    {% set nominal_total_amount = (total_shareholders | default(0) | int) * (each_share_price | default(0) | int) %}
 
-    </style>
-    <br/>
-    <br/>
-    <table>
+
+    {% set capital_currency = "SGD" if app.capital_currency == "" else app.capital_currency %}
+
+
+    <!-- Intro Table -->
+    <table class="intro">
         <tr>
-            <td rowspan="2" width="25%"></td>
-            <td rowspan="2" align="center" width="60%">
-                <table border="1" width="300" height="300">
-                    <tr>
-                        <td align="center" style="font-size:13px; font-weight: bold; line-height: 20px">
-                            <br/>THE COMPANIES ACT
-                            <br/>(CHAPTER 50)
-                            <br/>SECTION 173C(b)
-                            <br/>CONSENT TO ACT AS
-                            <br/>SECRETARY
-                        </td>
-                    </tr>
-                </table>
+            <!--   Middle Box  -->
+            <td>
+                <div class="box-1">
+
+                    THE COMPANIES ACT
+                    <br/>(CHAPTER 50)
+                    <br/>SECTION 173C(b)
+                    <br/>CONSENT TO ACT AS
+                    <br/>SECRETARY
+
+                </div>
             </td>
-            <td valign="absmiddle" width="15%" height="25" style="border: solid 2px #000;line-height: 20px">
-                <span style="padding: 10px; font-size:13px;"><b>FORM 45B</b></span>
+
+            <!--     Form 45B       -->
+            <td>
+                <div class="box-2"><b>FORM 45B</b></div>
             </td>
         </tr>
+
         <tr>
             <td></td>
         </tr>
     </table>
     <br/>
     <br/>
+
+    <!--  Info Table -->
+    <table class="info-table">
+
+        <!-- Company Name -->
+        <tr>
+            <td class="w-30 text-cell"><b> Name of Company : </b>
+            </td>
+            <td class="w-70 text-cell" style="border-bottom: solid 1px #000000;">
+                <b>{{ app.company_name }} </b></td>
+        </tr>
+
+
+        <!-- Company No  -->
+        <tr>
+            <td class="w-30 text-cell"><b> Company No : </b></td>
+            <td class="w-70 text-cell" style="border-bottom: solid 1px #000000">
+                <b>{{ app.uen }}</b></td>
+        </tr>
+    </table>
     <br/>
-    <table border="0" width="100%">
+    <br/>
+
+    <!--  Text Normal -->
+    <table class="text-normal-table">
         <tr>
-            <td class="tl" width="30%" valign="absmiddle" style="font-size:14px;"><b> Name of Company : </b></td>
-            <td class="tl" width="70%" height="20" valign="absmiddle" style="border-bottom: solid 1px #000000;"><b>{{
-                app.company_name }} </b></td>
-        </tr>
-        <tr>
-            <td class="tl" width="30%" valign="absmiddle"></td>
-            <td class="tl" width="70%" valign="absmiddle"></td>
-        </tr>
-        <tr>
-            <td class="tl" width="30%" align="left"><b> Company No : </b></td>
-            <td class="tl" width="70%" height="20" valign="absmiddle" style="border-bottom: solid 1px #000000;"><b>{{
-                app.uen }}</b></td>
-        </tr>
-        <tr>
-            <td class="tl" width="30%" valign="absmiddle"></td>
-            <td class="tl" width="70%" valign="absmiddle"></td>
-        </tr>
-        <tr>
-            <td class="tl" width="30%" valign="absmiddle"></td>
-            <td class="tl" width="70%" valign="absmiddle"></td>
-        </tr>
-        <tr>
-            <td width="4%">1.</td>
-            <td width="96%">I, the undermentioned person, hereby consent to act as a secretary of the abovenamed company
+            <td class="w-4">1.</td>
+            <td class="w-96">I, the undermentioned person, hereby consent to act as a secretary of the abovenamed
+                company
                 with effect from
                 company, with effect from <b>{{ app.effect_date or '' }}</b> (date)
                 <br/>
             </td>
         </tr>
         <tr>
-            <td width="4%">2.</td>
-            <td width="96%">I am a qualified person under section 171 (1AA) of the Companies Act by virtue of my being —
+            <td class="w-4">2.</td>
+            <td class="w-96">I am a qualified person under section 171 (1AA) of the Companies Act by virtue of my
+                being —
                 <br/>
                 <br/>*(i) a secretary of a company for at least 3 years of the 5 years immediately preceding the
                 abovementioned date
@@ -128,7 +120,8 @@
                 <br/>
                 <br/><s>*(iii) a public accountant.</s>
                 <br/>
-                <br/><s>*(iiia) a member of the Institute of Singapore Chartered Accountants (formerly known as the
+                <br/><s>*(iiia) a member of the Institute of Singapore Chartered Accountants (formerly known as
+                    the
                     Institute of Certified
                     Public Accountants of Singapore).</s>
                 <br/>
@@ -140,69 +133,93 @@
             </td>
         </tr>
     </table>
-    <br/>
-    <br/>
+
+
     <br/>
 
-    <table border="0" width="100%" align="left">
+
+    <!--  Shareholder Table -->
+    <table class="shareholder-table">
+
+        <!-- Name -->
         <tr>
-            <td class="tl" width="30%" height="15" valign="absmiddle"> Name :</td>
-            <td class="tl" width="70%" height="15" valign="absmiddle" style="border-bottom: solid 1px #000000;"> {{
-                officer_full_name }}
+            <td> Name :</td>
+            <td style="border-bottom: 1px solid #000000;">
+                {{ officer_full_name }}
             </td>
         </tr>
+
         <tr>
-            <td colspan="3" height="10"></td>
+            <td colspan="3" height="20"></td>
         </tr>
+
+        <!-- Address -->
         <tr>
-            <td class="tl" width="30%" height="15" align="left"> Address :</td>
-            <td class="tl" width="70%" height="15" valign="absmiddle" style="border-bottom: solid 1px #000000;"><br> {{
-                officer_address_1 }} {{ officer_address_2 }} {{
-                officer_postal_code }}
+            <td> Address :</td>
+            <td style="border-bottom: 1px solid #000000;">
+                <br> {{ officer_address_1 }} {{ officer_address_2 }} {{ officer_postal_code }}
             </td>
         </tr>
+
         <tr>
-            <td colspan="3" height="10"></td>
+            <td colspan="3" height="20"></td>
         </tr>
+
+        <!-- Officer Id Type -->
         <tr>
-            <td class="tl" width="30%" height="15" align="left"> {{ officer_id_type }} No.:</td>
-            <td class="tl" width="70%" height="15" valign="absmiddle" style="border-bottom: solid 1px #000000;"> {{
-                officer_id_number }}
+            <td> NRIC (Citizen) No.:</td>
+            <td style="border-bottom: 1px solid #000000;">
+                {{ officer_id_number }}
             </td>
         </tr>
+
+
         <tr>
-            <td colspan="3" height="10"></td>
+            <td colspan="3" height="20"></td>
         </tr>
+
+        <!--  Nationality -->
         <tr>
-            <td class="tl" width="30%" height="15" align="left"> Nationality :</td>
-            <td class="tl" width="70%" height="15" valign="absmiddle" style="border-bottom: solid 1px #000000;"> {{
-                officer_nationality }}
+            <td> Nationality :</td>
+            <td style="border-bottom: 1px solid #000000;">
+                {{ officer_nationality }}
             </td>
         </tr>
+
+
         <tr>
-            <td colspan="3" height="30"></td>
+            <td colspan="3" height="40"></td>
         </tr>
+
+        <!--  Signature -->
         <tr>
-            <td class="tl" width="30%" height="15" align="left"> Signature :</td>
-            <td class="tl" width="70%" height="15" align="center" valign="absmiddle">
-                <span style="color: white; font-size: 1px">{{ app.signature }}</span>
-                <hr>
+            <td> Signature :</td>
+            <td style="border-bottom: 1px solid #000000;">
+                {{ app.signature }}
             </td>
         </tr>
+
+
         <tr>
-            <td colspan="3" height="15"></td>
+            <td colspan="3" height="45"></td>
         </tr>
+
+
+        <!--      Date      -->
         <tr>
-            <td class="tl" width="100%" height="15" align="left" colspan="2"> Dated this :
+            <td class="w-100" colspan="2"> Dated this :
                 _________________________________ day of _________________________________________
             </td>
         </tr>
     </table>
-    <div style="font-size:9px;">
-        <p>To be completed by secretaries of public companies only or by secretaries of private companies appointed
-            under section 171(1AB) of the
-            Act.</p>
-        <p>*Delete where inapplicable</p>
+    <br>
+    <br>
+    <div class="last-text">
+        To be completed by secretaries of public companies only or by secretaries of private companies
+        appointed
+        under section 171(1AB) of the
+        Act.<br><br>
+        *Delete where inapplicable
     </div>
 
 

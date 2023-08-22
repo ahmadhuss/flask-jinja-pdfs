@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet"
+          href="https://staging.erp.leekim.online/assets/leekimerp/css/pdf_reset.css">
+    <title>CHANGE OF COMPANY NAME</title>
+    <style></style>
+</head>
+
+<body>
+<div>
+
+
+    <div style="width:100%; height:10px;"></div>
+    <div style="width:100%;text-align:center;font-size:14px;">
+        (Company Registration Number: {{ app.name }})<br/>
+        (Incorporated in the Republic of Singapore)
+    </div>
+
+    <hr style="border:1px solid #000; height:10px;">
+    <div style="width:100%; height:5px;"></div>
+
+    <div style="width:100%;text-align:center;font-size:14px;font-weight:bold;">
+        SPECIAL RESOLUTION ON CHANGE OF COMPANY NAME
+    </div>
+
+    <hr style="border:1px solid #000; height:10px;">
+    <div style="width:100%; height:5px;"></div>
+
+    <div style="width:100%; height:5px;"></div>
+
+    <div style="width:100%;text-align:left;font-size:14px;">
+        Pursuant to the Articles of Association of the Company we, being all the directors and shareholders of <b>{#'.$Bank_Remark02.'#} </b>
+        (“the Company”), do hereby certify the following special resolutions held in an Extraordinary General Meeting at
+        :
+    </div>
+
+
+    <div style="width:80%;text-align:left;font-size:14px;padding-left:100px;">
+        <table>
+            <tr>
+                <td width="10%"></td>
+                <td width="80%">
+                    <p style="margin-left: 40px; margin-right: 0px">
+                        <br/>
+                        {{ app.addr_1 }} <br/>
+                        {{ app.addr_2 }} <br/>
+                        {{ app.postcode }} <br/>
+                        <br/><br/>
+                        On the day of
+                    </p>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="width:100%; height:5px;"></div>
+    <div style="width:100%;text-align:left;font-size:14px;">
+        The following Special Resolution was duly passed that the name of the Company be changed to:
+    </div>
+
+    <div style="width:100%;text-align:left;font-size:14px;">
+        <table>
+            <tr>
+                <td width="10%"></td>
+                <td width="80%">
+                    <p style="margin-left: 40px; margin-right: 0px">
+                        <br/>
+                        <b>{{ app.company_name }}</b>
+                        <br/>
+                    </p>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div style="width:100%;text-align:left;font-size:14px;font-weight:bold;">
+
+        <div style="width:100%;text-align:left;font-size:14px;">
+            Dated :
+            <br/><br/>
+        </div>
+    </div>
+    <div style="width:100%; height:5px;"></div>
+
+    <table border="0" cellpadding=0 cellspacing=0 width="98%" align="left">
+        <tr>
+            <td colspan="3" style="height:20px;"></td>
+        </tr>
+        {% for shareholder in app.officers_shareholders %}
+        {% if loop.index % 2 == 1 %}
+        <tr>
+            <td style="width:40%; text-align:left;font-size:14px;">
+          <span style="color: white; font-size: 1px">_____________________________________________________________________
+            ___________________________________________{{ shareholder.signature or '' }}</span>
+                <hr>
+                <b>{{ shareholder.full_name or ''}}</b> <br/>
+                {{shareholder.designation or '' }}
+                <br/><br/>
+                <br/><br/>
+            </td>
+            <td width="140"></td>
+            {% else %}
+            <td style="width:40%; text-align:left;font-size:14px;">
+          <span style="color: white; font-size: 1px">_____________________________________________________________________
+            ___________________________________________{{ shareholder.signature or '' }}</span>
+                <hr>
+                <b>{{ shareholder.full_name or '' }}</b> <br/>
+                {{shareholder.designation or ''}}
+                <br/><br/>
+                <br/><br/>
+            </td>
+        </tr>
+        {% endif %}
+        {% if loop.index % 2 == 1 and loop.index == loop.length %}
+        <td>
+            &nbsp;
+        </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+
+</div>
+</body>
+</html>
